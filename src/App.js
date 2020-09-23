@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar';
 import ImageList from './components/ImageList';
 import ShowImage from './components/ShowImage';
 import Login from './components/Login'
-import MyProfile from './components/MyProfile'
+import MyImages from './components/MyImages'
 import { Route, Link, HashRouter as Router } from 'react-router-dom';
 
 const BASE_URL = 'http://localhost:3000'
@@ -13,7 +13,9 @@ const BASE_URL = 'http://localhost:3000'
 class App extends React.Component {
 
   state = {
-    currentUser: undefined
+    currentUser: {
+      images: []
+    }
   }
 
 
@@ -51,7 +53,7 @@ class App extends React.Component {
                 (
                   <ul>
                     <li>Welcome {this.state.currentUser.name} | </li>
-                    <li><Link to='/my_profile'>My Profile</Link></li>
+                    <li><Link to='/my_images'>My Saved Images</Link></li>
                     <li><Link onClick={this.handleLogout} to='/'>Logout</Link></li>
                   </ul>
                 )
@@ -63,14 +65,16 @@ class App extends React.Component {
           </nav>
           <hr/>
         </header>
-        <Route exact path='/my_profile' component={MyProfile}/>
         <Route
           exact path='/login'
           render={(props) => <Login setCurrentUser={this.setCurrentUser}{...props}/>}
           />
         <Route path="/" render={(props) => <SearchBar userSubmit={this.onSearchSubmit} {...props} />} />
         <Route exact path="/search/:query" component={ ImageList } />
-        <Route exact path="/ShowImage/:image" component={ ShowImage } />
+        <Route exact path="/ShowImage/:image"
+          render={(props) => <ShowImage currentUser={this.state.currentUser} {...props}/>}  />
+        <Route exact path='/my_images' component={MyImages}/>
+
       </Router>
     ); // return
   } // render

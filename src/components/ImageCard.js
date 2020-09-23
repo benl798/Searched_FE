@@ -30,7 +30,7 @@ class ImageCard extends Component {
             src={this.props.image.urls.regular}
             alt={this.props.image.alt_description}
         />
-
+      
       <Link to={`/ShowImage/${this.props.image.id}`}>
          <button>More info</button>
        </Link>
