@@ -6,6 +6,7 @@ import ShowImage from './components/ShowImage';
 import Login from './components/Login'
 import MyImages from './components/MyImages'
 import { Route, Link, HashRouter as Router } from 'react-router-dom';
+import '/Users/Ben/sei/projects/practice/react/practice/src/css/App.css'
 
 const BASE_URL = 'http://localhost:3000'
 
@@ -51,19 +52,21 @@ class App extends React.Component {
                 this.state.currentUser !== undefined
                 ?
                 (
-                  <ul>
-                    <li>Welcome {this.state.currentUser.name} | </li>
+                  <ul className="nav__links">
+                    <li id="welcome">Welcome {this.state.currentUser.name}</li>
+                    <li><a href="#">Home</a></li>
                     <li><Link to='/my_images'>My Saved Images</Link></li>
                     <li><Link onClick={this.handleLogout} to='/'>Logout</Link></li>
                   </ul>
                 )
                 :
                 (
-                  <Link to='/login'>Login</Link>
+                  <ul className="nav__links">
+                    <li><Link to='/login'>Login</Link></li>
+                  </ul>  
                 )
               }
           </nav>
-          <hr/>
         </header>
         <Route
           exact path='/login'

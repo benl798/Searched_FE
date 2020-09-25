@@ -1,13 +1,53 @@
-.flexContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+body {
+  background: #5CDB95;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.inputStyle {
-  font-size: 1.5em;
-  padding: 3px;
-  display: inline-block;
-  width: 30%;
+
+.search-box{
+  position: absolute;
+  top: 28%;
+  left: 49%;
+  transform: translate(-50%,-50%);
+  background: #05386B;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #EDF5E1;
+  font-size: 30px;
+  transition: 0.5s;
+  line-height: 40px;
+  width: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+::placeholder{
+  color: #EDF5E1;
+}
+
+
+.imgSearch {
+  font-size: 40px;
+  color: #05386B;
+  left: 40%;
+  position: absolute;
+  top: 12%;
 }

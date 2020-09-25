@@ -25,15 +25,14 @@ class ImageCard extends Component {
 
   render() {
     return (
-      <div style={{ gridRowEnd: `span ${this.state.spans}`}}>
-        <img ref={this.imageRef} key={this.props.image.id}
-            src={this.props.image.urls.regular}
+      <div className="imgResult" style={{ gridRowEnd: `span ${this.state.spans}`}}>
+        <Link to={`/ShowImage/${this.props.image.id}`}><img ref={this.imageRef} key={this.props.image.id}
+            src={`${this.props.image.urls.thumb}&h=200&fit=crop`}
             alt={this.props.image.alt_description}
         />
-      
-      <Link to={`/ShowImage/${this.props.image.id}`}>
-         <button>More info</button>
-       </Link>
+      </Link>
+
+    
       </div>
     )
   }

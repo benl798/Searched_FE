@@ -19,12 +19,15 @@ class SearchBar extends React.Component {
     return (
       <div>
         <form onSubmit={this.onFormSubmit} className="flexContainer">
-          <label htmlFor="search"><h2>Image Search: </h2></label>
-          <input
-            className="inputStyle"
-            type="text"
-            onChange={this.onInputChange}
-          />
+          <label htmlFor="search"><h2 className="imgSearch">Image Search: </h2></label>
+          <div className="search-box">
+            <input
+              className="search-txt"
+              placeholder="Type to search..."
+              type="text"
+              onChange={this.onInputChange}
+            />
+          </div>
         </form>
       </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import '/Users/Ben/sei/projects/practice/react/practice/src/css/MyImages.css'
 
 const BASE_URL = 'http://localhost:3000'
 
@@ -30,12 +31,7 @@ class MyImages extends React.Component{
         {
           this.state.images.map(image => {
             return(
-              <div>
-                <p>Image of {image.description}</p>
-                <p>{image.location_name}</p>
-                <p>{image.alt_description}</p>
-                <p>{image.latitude}</p>
-                <p>{image.longitude}</p>
+              <div className="showImg">
                 <img src={image.url}/>
               </div>
             )

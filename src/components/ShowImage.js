@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageList from './ImageList';
 import axios from 'axios';
+import '/Users/Ben/sei/projects/practice/react/practice/src/css/ShowImage.css'
 // import UNSPLASH_BASE_URL = 'https://api.unsplash.com/photos';
 // import UNSPLASH_TOKENS = '/?client_id=8a5UR7gdFTOgRV9Mg9Z5L4TJrYeIMNaqocGx5aj83KE';
 
@@ -57,6 +58,13 @@ isImageSaved(){
 }
 
 
+incrementLike = () => {
+    let newCount = this.state.count + 1
+    this.setState({
+      count: newCount
+    })
+  }
+
 componentDidMount (){
   console.log(this.props);
   this.fetchImageInfo();
@@ -69,12 +77,12 @@ render() {
   // If matches then save a variable true which will determine what appears in the 'save image' button
   // If already in the list = already saved/disabled, otherwise user hasnt saved img yet and should appear
   return (
-    <div>
-      Show Page
-      <h2>image of { this.state.image.alt_description }</h2>
+    <div className="displayImage">
+      <h2>Image of: { this.state.image.description }</h2>
       <img src={this.state.image?.urls?.small} />
-      <p>{ this.state.image.description }</p>
-      <p>{ this.state.image.location?.name }</p>
+      <p>Alternative description: { this.state.image.alt_description }</p>
+      <p>Location: { this.state.image.location?.name }</p>
+      <p>Link: { this.state.image.links?.html }</p>
       <button onClick={this.incrementLike}> Likes: {this.state.count}</button>
       {
         this.state.showSaveImageButton &&
