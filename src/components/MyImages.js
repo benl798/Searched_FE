@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import '/Users/Ben/sei/projects/practice/react/practice/src/css/MyImages.css'
 
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'https://searched-project.herokuapp.com'
 
 class MyImages extends React.Component{
   state = {

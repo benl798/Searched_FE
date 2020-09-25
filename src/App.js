@@ -8,7 +8,7 @@ import MyImages from './components/MyImages'
 import { Route, Link, HashRouter as Router } from 'react-router-dom';
 import '/Users/Ben/sei/projects/practice/react/practice/src/css/App.css'
 
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'https://searched-project.herokuapp.com'
 
 
 class App extends React.Component {
@@ -63,7 +63,7 @@ class App extends React.Component {
                 (
                   <ul className="nav__links">
                     <li><Link to='/login'>Login</Link></li>
-                  </ul>  
+                  </ul>
                 )
               }
           </nav>
